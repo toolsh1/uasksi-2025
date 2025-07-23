@@ -10,26 +10,21 @@ class Rental extends Model
     use HasFactory;
 
     protected $fillable = [
-        'costumer_id', 'kostum_id', 'tanggal_pinjam', 'tanggal_kembali', 'status',
+        'costumer_id',
+        'kostum_id',
+        'tanggal_pinjam',
+        'tanggal_kembali',
+        'total_biaya',
+        'status'
     ];
-
-    public function costumer()
-    {
-        return $this->belongsTo(Costumer::class);
-    }
 
     public function kostum()
     {
         return $this->belongsTo(Kostum::class);
     }
 
-    public function pembayaran()
+    public function costumer()
     {
-        return $this->hasOne(Pembayaran::class);
-    }
-
-    public function denda()
-    {
-        return $this->hasOne(Denda::class);
+        return $this->belongsTo(Costumer::class);
     }
 }

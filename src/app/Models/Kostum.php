@@ -9,11 +9,9 @@ class Kostum extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'nama_kostum', 'ukuran', 'harga_sewa', 'stok',
-    ];
+    protected $fillable = ['nama_kostum', 'deskripsi', 'harga_sewa', 'stok'];
 
-    public function rentals()
+    public function peminjamans()
     {
         return $this->hasMany(Rental::class);
     }

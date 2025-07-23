@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('rentals', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('costumer_id')->constrained('costumers')->onDelete('cascade');
+            $table->foreignId('kostum_id')->constrained('kosta')->onDelete('cascade');
+            $table->date('tanggal_pinjam');
+            $table->date('tanggal_kembali')->nullable();
+            $table->decimal('total_biaya', 10, 2);
+            $table->enum('status', ['dipinjam', 'kembali'])->default('dipinjam');
             $table->timestamps();
         });
     }

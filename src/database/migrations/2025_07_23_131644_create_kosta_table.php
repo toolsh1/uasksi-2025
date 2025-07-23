@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('kosta', function (Blueprint $table) {
             $table->id();
+            $table->string('nama_kostum');
+            $table->text('deskripsi');
+            $table->decimal('harga_sewa', 10, 2);
+            $table->integer('stok');
             $table->timestamps();
         });
     }

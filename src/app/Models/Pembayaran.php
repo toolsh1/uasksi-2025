@@ -9,10 +9,10 @@ class Pembayaran extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['rental_id', 'metode', 'total_bayar', 'status'];
+    protected $fillable = ['peminjaman_id', 'jumlah_bayar', 'tanggal_bayar', 'metode'];
 
-    public function rental()
+    public function peminjaman()
     {
-        return $this->belongsTo(Rental::class);
+        return $this->belongsTo(Peminjaman::class);
     }
 }
